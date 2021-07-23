@@ -7,7 +7,6 @@ export const SketchComponent = () => {
   const Sketch = (p) => {
     p.setup = () => {
       p.createCanvas(800, 800);
-
       c1 = p.color(`hsba(${hue + 100}, 100%, 20%, 1)`);
       c2 = p.color(`hsba(${hue}, 60%, 100%, 0)`);
     };
@@ -19,7 +18,6 @@ export const SketchComponent = () => {
     const hue = 200;
     let offset = 0;
     let xoff = 0;
-    // let xoff2 = 0;
     // let yoff = 0;
 
     p.draw = () => {
@@ -54,13 +52,12 @@ export const SketchComponent = () => {
           
       }
     };
-  }
-    useEffect(() => {
-      const myp5 = new p5(Sketch, myRef.current);
-      return myp5;
-    }, []);
+  };
+  useEffect(() => {
+    const myp5 = new p5(Sketch, myRef.current);
+    return myp5;
+  }, []);
 
-  
   return <div ref={myRef}></div>;
 };
 
